@@ -1,0 +1,19 @@
+$fontPath: '/static/fonts/';
+$fontFamilies: 'FuturaLight', 'FuturaMedium', 'LindbergLight', 'LindbergMedium';
+$fontFilenames: 'futura-light-web', 'futura-medium-web', 'LINDBERG-light-web', 'LINDBERG-medium-web';
+$i: 1;
+
+@each $fontFamily in $fontFamilies {
+  @font-face {
+    font-family: $fontFamily;
+    src: url($fontPath + nth($fontFilenames, $i) + '.eot?') format('embedded-opentype');
+    src: url($fontPath + nth($fontFilenames, $i) + '.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  $i: $i + 1;
+}
+
+body {
+  font-family: "FuturaLight", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
