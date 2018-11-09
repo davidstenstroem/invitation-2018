@@ -1,8 +1,5 @@
 <template>
-  <main>
-    <h1>Invi18</h1>
-    <router-view/>
-  </main>
+  <router-view/>
 </template>
 
 <script>

@@ -1,0 +1,84 @@
+$gap: 10px;
+
+@mixin randomBgr () {
+  background-color: rgb(random(255), random(255), random(255));
+}
+
+.grid {
+  grid-gap: $gap;
+  display: grid;
+  width: calc(100% - 6em);
+  height: calc(100vh - 3em);
+  grid-auto-rows: calc((calc(100vh - 6em) / 20) - #{$gap});
+  grid-auto-columns: calc((calc(100% - 6em) / 30) - #{$gap});
+  margin: 0 3em 3em 3em;
+  justify-content: center;
+  align-content: center;
+
+  .grid-item {
+    $numColors: 20;
+    @for $i from 0 to $numColors {
+      &:nth-child(#{$i}) {
+        @include randomBgr();
+      }
+    }
+
+    position: relative;
+    padding: 1em;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    transition: transform 200ms ease-in-out;
+
+    &:first-child {
+      grid-area: 4 / 5 / span 5 / span 5;
+      background-image: url('/static/img/1.jpg');
+    }
+
+    &:nth-child(2) {
+      grid-area: 2 / 10 / span 7 / span 5;
+      background-image: url('/static/img/2.jpg');
+    }
+
+    &:nth-child(3) {
+      grid-area: 3 / 15 / span 6 / span 5;
+      background-image: url('/static/img/3.jpg');
+    }
+
+    &:nth-child(4) {
+      grid-area: 5 / 20 / span 4 / span 5;
+    }
+
+    &:nth-child(5) {
+      grid-area: 8 / 2 / span 7 / span 2;
+      display: flex;
+      justify-content: flex-end;
+
+      .text {
+        writing-mode: tb-rl;
+      }
+    }
+
+    &:nth-child(6) {
+      grid-area: 9 / 4 / span 10 / span 10;
+    }
+
+    &:nth-child(7) {
+      grid-area: 9 / 14 / span 3 / span 6;
+      background-image: url('/static/img/4.jpg');
+    }
+
+    &:nth-child(8) {
+      grid-area: 12 / 14 / span 7 / span 4;
+      background-image: url('/static/img/5.jpg');
+    }
+
+    &:nth-child(9) {
+      grid-area: 9 / 20 / span 3 / span 9;
+    }
+
+    &:nth-child(10) {
+      grid-area: 12 / 18 / span 5 / span 8;
+    }
+  }
+}
