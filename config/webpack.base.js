@@ -10,7 +10,8 @@ module.exports = {
       assets: utils.resolve('assets'),
       static: utils.resolve('static'),
       pages: utils.resolve('src/pages'),
-      components: utils.resolve('src/components')
+      components: utils.resolve('src/components'),
+      directives: utils.resolve('src/directives')
     }
   },
   module: {
