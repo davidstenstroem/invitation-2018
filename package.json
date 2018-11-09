@@ -8,7 +8,9 @@
     "dev": "webpack-dev-server --config config/webpack.development.js",
     "prod": "webpack --config config/webpack.production.js",
     "lint": "eslint --ext .js,.vue src",
-    "lint:fix": "eslint --ext .js,.vue src --fix"
+    "lint:fix": "eslint --ext .js,.vue src --fix",
+    "aws": "aws s3 sync ./dist s3://dst-invitation-2019",
+    "deploy": "npm run prod && npm run aws"
   },
   "keywords": [],
   "author": "David Stenstrøm <david@stenstroem.dk> (https://stenstroem.dk)",
