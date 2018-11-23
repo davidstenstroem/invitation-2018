@@ -50,6 +50,7 @@
   "dependencies": {
     "imagesloaded": "^4.1.4",
     "vue": "^2.5.17",
+    "vue-lottie": "^0.2.1",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   }
