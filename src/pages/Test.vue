@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Lottie from 'vue-lottie/src/lottie.vue'
+import Lottie from 'components/lottie.vue'
 import * as animData from 'static/json/data.json'
 export default {
   name: 'Test',

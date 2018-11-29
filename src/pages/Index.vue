@@ -22,7 +22,7 @@
       <div class="grid-item">
         <img src="">
       </div>
-      <div class="grid-item">
+      <div class="grid-item-no-move">
         <img src="">
       </div>
       <div class="grid-item">
@@ -44,40 +44,15 @@ export default {
   },
   data () {
     return {
-      grid: [
-        {
-          text: null,
-          image: '1.jpg'
-        },
-        {
-          text: null,
-          image: '2.jpg'
-        },
-        {
-          text: 'opti 2019',
-          image: '3.jpg'
-        },
-        {
-          text: 'January 25-27',
-          image: null
-        },
-        {
-          text: 'Messe München'
-        }
-      ],
       config: {
-        maxTranslationX: 50,
-        maxTranslationY: 50
-      }
+        maxTranslationX: 10,
+        maxTranslationY: 10
+      },
+      windowWidth: 0,
+      windowHeight: 0
     }
   },
   computed: {
-    win () {
-      return {
-        width: window.innerWidth,
-        height: window.innerHeight
-      }
-    },
     center () {
       const win = this.win()
       return {
@@ -87,11 +62,19 @@ export default {
     }
   },
   mounted () {
-    this.getRef()
+
+  },
+  created () {
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize()
+  },
+  destroyed () {
+    window.removeEventListener('resize', this.handleResize)
   },
   methods: {
-    getRef () {
-      console.log(this.$refs)
+    handleResize () {
+      this.windowWidth = window.innerWidth
+      this.windowHeight = window.innerHeight
     },
     debounce (func, wait, immediate) {
       let timeout
@@ -131,12 +114,11 @@ export default {
     },
     onMove (event) {
       requestAnimationFrame(() => {
-        const win = this.win()
         const mousePos = this.getMousePos(event)
-        const transX = 2 * this.config.maxTranslationX / win.width * mousePos.x - this.config.maxTranslationX
-        const transY = 2 * this.config.maxTranslationY / win.height * mousePos.y - this.config.maxTranslationY
-        this.$refs.grid.children.forEach(child => {
-          child.style.transform = `translate3d(${transX}px, ${transY}px, 0)`
+        const transX = 2 * this.config.maxTranslationX / this.windowWidth * mousePos.x - this.config.maxTranslationX
+        const transY = 2 * this.config.maxTranslationY / this.windowHeight * mousePos.y - this.config.maxTranslationY
+        this.$refs.grid.querySelectorAll('.grid-item').forEach(item => {
+          item.style.transform = `translate3d(${transX}px, ${transY}px, 0)`
         })
       })
     },

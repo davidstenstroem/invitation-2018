@@ -15,7 +15,7 @@ $gap: 10px;
   justify-content: center;
   align-content: center;
 
-  .grid-item {
+  .grid-item, .grid-item-no-move {
     $numColors: 20;
     @for $i from 0 to $numColors {
       &:nth-child(#{$i}) {
