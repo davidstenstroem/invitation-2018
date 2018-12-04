@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack-dev-server --config config/webpack.development.js",
-    "prod": "webpack --config config/webpack.production.js",
+    "prod": "rimraf dist && webpack --config config/webpack.production.js",
     "lint": "eslint --ext .js,.vue src",
     "lint:fix": "eslint --ext .js,.vue src --fix",
     "aws": "aws s3 sync ./dist s3://dst-invitation-2019",
@@ -36,6 +36,7 @@
     "mini-css-extract-plugin": "^0.4.4",
     "node-sass": "^4.10.0",
     "postcss-loader": "^3.0.0",
+    "rimraf": "^2.6.2",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "url-loader": "^1.1.2",
