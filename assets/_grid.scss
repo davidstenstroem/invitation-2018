@@ -85,7 +85,7 @@ $break: 1100px;
     }
 
     &:first-child {
-      grid-area: 4 / 5 / span 5 / span 8;
+      grid-area: 4 / 3 / span 5 / span 8;
       background-image: url('/static/img/photo1.jpg');
 
       @media (max-width: $break) {
@@ -96,7 +96,7 @@ $break: 1100px;
     }
 
     &:nth-child(2) {
-      grid-area: 3 / 13 / span 6 / span 6;
+      grid-area: 3 / 11 / span 6 / span 6;
       background-image: url('/static/img/grey_background.jpg');
 
       display: flex;
@@ -128,7 +128,7 @@ $break: 1100px;
     // }
 
     &:nth-child(3) {
-      grid-area: 5 / 19 / span 4 / span 5;
+      grid-area: 5 / 17 / span 4 / span 5;
       background-color: #3e5f7a;
 
       display: flex;
@@ -155,7 +155,7 @@ $break: 1100px;
     }
 
     &:nth-child(4) {
-      grid-area: 8 / 2 / span 7 / span 2;
+      grid-area: 8 / 1 / span 7 / span 2;
       display: flex;
       justify-content: flex-end;
 
@@ -165,7 +165,7 @@ $break: 1100px;
     }
 
     &:nth-child(5) {
-      grid-area: 9 / 4 / span 6 / span 10;
+      grid-area: 9 / 2 / span 6 / span 10;
       background-image: url('/static/img/photo2.jpg');
 
       @media (max-width: $break) {
@@ -176,7 +176,7 @@ $break: 1100px;
     }
 
     &:nth-child(6) {
-      grid-area: 9 / 14 / span 3 / span 6;
+      grid-area: 9 / 12 / span 3 / span 6;
       background-image: url('/static/img/photo3.jpg');
       background-position: left center;
 
@@ -187,7 +187,7 @@ $break: 1100px;
     }
 
     &:nth-child(7) {
-      grid-area: 12 / 14 / span 7 / span 14;
+      grid-area: 12 / 12 / span 7 / span 14;
 
       padding-top: 0.75rem;
 
@@ -201,7 +201,7 @@ $break: 1100px;
     }
 
     &:nth-child(8) {
-      grid-area: 9 / 20 / span 3 / span 9;
+      grid-area: 9 / 18 / span 3 / span 9;
       background-color: #d1a98b;
       display: flex;
       align-items: center;
